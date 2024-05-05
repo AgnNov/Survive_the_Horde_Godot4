@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2s0g0prrujx2"]
+[gd_scene load_steps=7 format=3 uid="uid://c2s0g0prrujx2"]
 
 [ext_resource type="Texture2D" uid="uid://6owpy22a60a6" path="res://assets/sprites/fruit.png" id="1_b40ht"]
 [ext_resource type="Script" path="res://scripts/nodesBehavior/projectile.gd" id="1_e8mu3"]
+[ext_resource type="AudioStream" uid="uid://bvt5jqu5mrlv3" path="res://assets/sounds/56_Attack_03.wav" id="3_tu2pk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3ogy4"]
 atlas = ExtResource("1_b40ht")
@@ -34,3 +35,7 @@ sprite_frames = SubResource("SpriteFrames_6ljr0")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)
 shape = SubResource("CircleShape2D_h6vut")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_tu2pk")
+volume_db = -5.0

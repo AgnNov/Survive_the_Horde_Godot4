@@ -15,7 +15,7 @@ SPRITES by RottingPixels:
 world_tileset and fruit (https://rottingpixels.itch.io/four-seasons-platformer-tileset-16x16free)
 
 SOUNDS AND MUSIC by Leohpaz:
-attack and enemy death (https://leohpaz.itch.io/rpg-essentials-sfx-free)
+52_Dive_02, 56_Attack_03, 69_Enemy_death_01 (https://leohpaz.itch.io/rpg-essentials-sfx-free)
 Goblins_Dance_(Battle) (https://leohpaz.itch.io/minifantasy-dungeon-sfx-pack)
 
 FONTS by Jayvee Enaguas - HarvettFox96 - (https://www.dafont.com/pixel-operator.font?l[]=10&l[]=1)

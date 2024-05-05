@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cxcrjex4an864"]
+[gd_scene load_steps=16 format=3 uid="uid://cxcrjex4an864"]
 
 [ext_resource type="Script" path="res://scripts/ui/labels.gd" id="1_lg2s1"]
 [ext_resource type="FontFile" uid="uid://bubsr6qt7it2s" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_sh6ii"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://d2s27mvl1mawi" path="res://scenes/reusables/enemy.tscn" id="5_66xwf"]
 [ext_resource type="Script" path="res://scripts/managers/projectileManager.gd" id="6_364t2"]
 [ext_resource type="PackedScene" uid="uid://c2s0g0prrujx2" path="res://scenes/reusables/projectile.tscn" id="7_wi3hl"]
-[ext_resource type="AudioStream" uid="uid://bvt5jqu5mrlv3" path="res://assets/sounds/56_Attack_03.wav" id="8_85org"]
 [ext_resource type="PackedScene" uid="uid://1kw71boj5cia" path="res://scenes/player.tscn" id="8_ltx43"]
 [ext_resource type="Texture2D" uid="uid://bgbpq11q8go3y" path="res://assets/sprites/world_tileset.png" id="9_nfkrd"]
 [ext_resource type="Texture2D" uid="uid://dsksmdddjnt0d" path="res://assets/sprites/progress_bar.png" id="10_hubbg"]
@@ -229,9 +228,6 @@ position = Vector2(10, -400)
 script = ExtResource("6_364t2")
 projectile_scene = ExtResource("7_wi3hl")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="ProjectileManager"]
-stream = ExtResource("8_85org")
-
 [node name="GameOverPanel" type="Node2D" parent="."]
 unique_name_in_owner = true
 visible = false
@@ -283,6 +279,7 @@ texture = ExtResource("10_hubbg")
 
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_17lop")
+volume_db = 5.0
 autoplay = true
 
 [connection signal="level_completed" from="GameManager" to="SpawnManager" method="_on_game_manager_level_completed"]

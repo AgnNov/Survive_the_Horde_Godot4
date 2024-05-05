@@ -6,6 +6,7 @@ var is_dying: bool = false
 var attack_direction : Vector2
 
 @onready var animated_sprite : AnimatedSprite2D = $AnimatedSprite2D
+@onready var audio_stream_player = $AudioStreamPlayer2D
 @onready var timer : Timer = $Timer
 
 signal attack
@@ -47,6 +48,7 @@ func _on_enemy_player_reached():
 
 	if not is_dying:
 		animated_sprite.play("dying")
+		audio_stream_player.play()
 		is_dying = true
 		timer.start()
 
