@@ -12,7 +12,7 @@ var is_shootable : bool = true
 @onready var animated_sprite : AnimatedSprite2D = $AnimatedSprite2D
 @onready var timer : Timer = $"../Timer"
 @onready var enemy_parent : Enemy = $".."
-@onready var labels = %Labels
+@onready var labels = $"/root/game/Labels"
 
 signal player_reached
 signal shooted
