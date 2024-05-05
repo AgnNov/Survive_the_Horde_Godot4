@@ -33,7 +33,8 @@ func get_input():
 	
 	if Input.is_action_just_pressed("attack"):
 		attack_direction = get_global_mouse_position() - position
-		animated_sprite.play("attacking")
+		if not is_dying:
+			animated_sprite.play("attacking")
 		
 		attack.emit(position, attack_direction)
 

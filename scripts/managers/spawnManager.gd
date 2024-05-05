@@ -3,10 +3,10 @@ extends Node
 
 @export var enemy_scene : PackedScene
 
+const SPAWNS_ADDED = 4
+
 var spawn_points : Array = []
 var spawns_count : int = 1
-
-@onready var player : Player = $"/root/game/Player"
 
 func _ready():
 	for i in get_children():
@@ -16,21 +16,19 @@ func _ready():
 	for i in spawn_points:
 		for j in range(0, spawns_count):
 			var enemy : Enemy = enemy_scene.instantiate()
-			#enemy.player_reached.connect(player._on_enemy_player_reached)
+
 			add_child(enemy)
 			enemy.position = i.position
 
 func _on_game_manager_level_completed():
-	spawns_count = spawns_count + 2
+	spawns_count = spawns_count + SPAWNS_ADDED
 
 	for i in spawn_points:
 		for j in range(0, spawns_count):
 			var enemy : Enemy = enemy_scene.instantiate()
-			#enemy.player_reached.connect(player._on_enemy_player_reached)
 			add_child(enemy)
 			enemy.position = i.position 
 			await get_tree().create_timer(0.1).timeout 
-			# to replace with something that will cause enemies not to spawn on each other
 			
 
 

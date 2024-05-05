@@ -1,7 +1,7 @@
 class_name GameManager
 extends Node
 
-const ADDED_TIME : float = 3.0
+const ADDED_TIME : float = 2.0
 
 var current_wait : float = 5.0
 var time_passed_part : float

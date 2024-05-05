@@ -1,7 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://d2s27mvl1mawi"]
+[gd_scene load_steps=15 format=3 uid="uid://d2s27mvl1mawi"]
 
 [ext_resource type="Texture2D" uid="uid://c5fjn75b4nefr" path="res://assets/sprites/slime_green.png" id="1_8irpx"]
-[ext_resource type="Script" path="res://scripts/objectsBehavior/enemy.gd" id="1_nq581"]
+[ext_resource type="Script" path="res://scripts/nodesBehavior/enemy.gd" id="1_bpl3t"]
+[ext_resource type="Script" path="res://scripts/enemyArea.gd" id="2_7laqb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j4emt"]
+size = Vector2(16, 15)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nq3q0"]
 atlas = ExtResource("1_8irpx")
@@ -73,14 +77,23 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rjt06"]
-size = Vector2(9.7222, 12)
+size = Vector2(14, 13)
 
-[node name="Enemy" type="Area2D"]
+[node name="Enemy" type="CharacterBody2D"]
 z_index = 4
 z_as_relative = false
 collision_layer = 4
+collision_mask = 14
+script = ExtResource("1_bpl3t")
+
+[node name="enemyArea" type="Area2D" parent="."]
+collision_layer = 4
 collision_mask = 10
-script = ExtResource("1_nq581")
+script = ExtResource("2_7laqb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemyArea"]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_j4emt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_e15v7")
@@ -89,7 +102,7 @@ autoplay = "running"
 frame_progress = 0.704292
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 6)
+position = Vector2(-1.19209e-07, 5.5)
 shape = SubResource("RectangleShape2D_rjt06")
 
 [node name="Timer" type="Timer" parent="."]
