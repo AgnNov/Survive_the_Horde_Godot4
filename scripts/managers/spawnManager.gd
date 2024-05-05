@@ -16,7 +16,6 @@ func _ready():
 	for i in spawn_points:
 		for j in range(0, spawns_count):
 			var enemy : Enemy = enemy_scene.instantiate()
-
 			add_child(enemy)
 			enemy.position = i.position
 

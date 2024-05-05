@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c5fjn75b4nefr" path="res://assets/sprites/slime_green.png" id="1_8irpx"]
 [ext_resource type="Script" path="res://scripts/nodesBehavior/enemy.gd" id="1_bpl3t"]
-[ext_resource type="Script" path="res://scripts/enemyArea.gd" id="2_7laqb"]
+[ext_resource type="Script" path="res://scripts/nodesBehavior/enemyArea.gd" id="2_7laqb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j4emt"]
 size = Vector2(16, 15)
@@ -95,7 +95,7 @@ script = ExtResource("2_7laqb")
 position = Vector2(0, 5.5)
 shape = SubResource("RectangleShape2D_j4emt")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemyArea"]
 sprite_frames = SubResource("SpriteFrames_e15v7")
 animation = &"running"
 autoplay = "running"

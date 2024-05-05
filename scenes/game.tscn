@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c2s0g0prrujx2" path="res://scenes/projectile.tscn" id="5_0wstu"]
 [ext_resource type="FontFile" uid="uid://bubsr6qt7it2s" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="6_7oqfb"]
 [ext_resource type="Texture2D" uid="uid://dsksmdddjnt0d" path="res://assets/sprites/progress_bar.png" id="7_d5lme"]
-[ext_resource type="Script" path="res://scripts/levelLabel.gd" id="8_gosuv"]
+[ext_resource type="Script" path="res://scripts/ui/labels.gd" id="8_gosuv"]
 [ext_resource type="PackedScene" uid="uid://d2s27mvl1mawi" path="res://scenes/enemy.tscn" id="10_s5qkn"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_bol7g"]
@@ -181,15 +181,31 @@ position = Vector2(1, 36)
 position = Vector2(288, 5)
 shape = SubResource("SegmentShape2D_j0dbo")
 
+[node name="Labels" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("8_gosuv")
+
+[node name="levelLabel" type="Label" parent="Labels"]
+offset_left = -50.0
+offset_top = -342.0
+offset_right = 54.0
+offset_bottom = -319.0
+theme_override_fonts/font = ExtResource("6_7oqfb")
+text = "LEVEL 1"
+
+[node name="scoreLabel" type="Label" parent="Labels"]
+offset_left = -341.0
+offset_top = -343.0
+offset_right = -225.0
+offset_bottom = -320.0
+theme_override_fonts/font = ExtResource("6_7oqfb")
+text = "Score: 0"
+
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("1_elm41")
 
 [node name="Timer" type="Timer" parent="GameManager"]
 one_shot = true
-
-[node name="ProjectileManager" type="Node" parent="."]
-script = ExtResource("4_phqqv")
-projectile_scene = ExtResource("5_0wstu")
 
 [node name="SpawnManager" type="Node" parent="."]
 script = ExtResource("4_0yf65")
@@ -207,13 +223,16 @@ position = Vector2(10, 400)
 [node name="SpawnPos4" type="Marker2D" parent="SpawnManager"]
 position = Vector2(10, -400)
 
+[node name="ProjectileManager" type="Node" parent="."]
+script = ExtResource("4_phqqv")
+projectile_scene = ExtResource("5_0wstu")
+
 [node name="GameOverPanel" type="Node2D" parent="."]
 unique_name_in_owner = true
-visible = false
 z_index = 5
 position = Vector2(6, 2)
 
-[node name="Label" type="Label" parent="GameOverPanel"]
+[node name="GameOverLabel" type="Label" parent="GameOverPanel"]
 offset_left = -175.0
 offset_top = -18.0
 offset_right = 176.0
@@ -224,9 +243,9 @@ text = "GAME OVER"
 
 [node name="RestartButton" type="Button" parent="GameOverPanel"]
 offset_left = -99.0
-offset_top = 33.0
+offset_top = 37.0
 offset_right = 98.0
-offset_bottom = 61.0
+offset_bottom = 65.0
 
 [node name="Label" type="Label" parent="GameOverPanel/RestartButton"]
 layout_mode = 0
@@ -255,18 +274,6 @@ unique_name_in_owner = true
 position = Vector2(0, -299)
 scale = Vector2(1, 0.5)
 texture = ExtResource("7_d5lme")
-
-[node name="LevelLabel" type="StaticBody2D" parent="."]
-position = Vector2(0, -341)
-script = ExtResource("8_gosuv")
-
-[node name="Label" type="Label" parent="LevelLabel"]
-offset_left = -47.0
-offset_top = -4.0
-offset_right = 57.0
-offset_bottom = 19.0
-theme_override_fonts/font = ExtResource("6_7oqfb")
-text = "LEVEL 1"
 
 [connection signal="level_completed" from="GameManager" to="SpawnManager" method="_on_game_manager_level_completed"]
 [connection signal="pressed" from="GameOverPanel/RestartButton" to="GameManager" method="_on_restart_button_pressed"]
