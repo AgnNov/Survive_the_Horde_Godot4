@@ -5,14 +5,15 @@ var speed = 180.0
 var is_dying: bool = false
 var attack_direction : Vector2
 
-@onready var animated_sprite = $AnimatedSprite2D
-@onready var timer = $Timer
+@onready var animated_sprite : AnimatedSprite2D = $AnimatedSprite2D
+@onready var timer : Timer = $Timer
 
 signal attack
 signal death
 
 func _ready():
 	add_to_group("player")
+	timer.timeout.connect(_on_timer_timeout)
 
 func get_input():
 	var direction = Input.get_vector("left", "right", "up", "down")
@@ -48,5 +49,4 @@ func _on_enemy_player_reached():
 	timer.start()
 
 func _on_timer_timeout():
-	queue_free()
 	death.emit()

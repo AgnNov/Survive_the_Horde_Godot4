@@ -268,8 +268,5 @@ theme_override_fonts/font = ExtResource("6_7oqfb")
 text = "LEVEL 1"
 
 [connection signal="level_completed" from="GameManager" to="SpawnManager" method="_on_game_manager_level_completed"]
-[connection signal="timeout" from="GameManager/Timer" to="GameManager" method="_on_timer_timeout"]
-[connection signal="timeout" from="GameManager/Timer" to="LevelLabel" method="_on_timer_timeout"]
 [connection signal="pressed" from="GameOverPanel/RestartButton" to="GameManager" method="_on_restart_button_pressed"]
-[connection signal="attack" from="Player" to="ProjectileManager" method="_on_player_attack"]
 [connection signal="death" from="Player" to="GameManager" method="_on_player_death"]

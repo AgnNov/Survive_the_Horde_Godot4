@@ -3,7 +3,7 @@ extends StaticBody2D
 
 var level_count : int = 1
 
-@onready var label = $Label
+@onready var label : Label = $Label
 
 func _on_timer_timeout():
 	level_count = level_count + 1
