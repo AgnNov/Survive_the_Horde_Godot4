@@ -210,6 +210,7 @@ position = Vector2(10, -400)
 [node name="GameOverPanel" type="Node2D" parent="."]
 unique_name_in_owner = true
 visible = false
+z_index = 5
 position = Vector2(6, 2)
 
 [node name="Label" type="Label" parent="GameOverPanel"]
@@ -269,4 +270,3 @@ text = "LEVEL 1"
 
 [connection signal="level_completed" from="GameManager" to="SpawnManager" method="_on_game_manager_level_completed"]
 [connection signal="pressed" from="GameOverPanel/RestartButton" to="GameManager" method="_on_restart_button_pressed"]
-[connection signal="death" from="Player" to="GameManager" method="_on_player_death"]

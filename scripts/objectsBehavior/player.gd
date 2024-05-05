@@ -43,10 +43,11 @@ func _physics_process(delta):
 	
 func _on_enemy_player_reached():
 	speed = 0.0
-	is_dying = true
-	
-	animated_sprite.play("dying")
-	timer.start()
+
+	if not is_dying:
+		animated_sprite.play("dying")
+		is_dying = true
+		timer.start()
 
 func _on_timer_timeout():
 	death.emit()

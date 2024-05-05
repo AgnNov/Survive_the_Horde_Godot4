@@ -40,7 +40,6 @@ func _on_body_entered(body):
 func _on_area_entered(area):
 	if area.is_in_group("projectiles"):
 		speed = 0.0
-
 		area.queue_free()
 		animated_sprite.play("dying")
 		timer.start()
