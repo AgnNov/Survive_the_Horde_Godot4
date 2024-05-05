@@ -6,7 +6,7 @@ extends Node
 var spawn_points : Array = []
 var spawns_count : int = 1
 
-@onready var player = $"../Player"
+@onready var player = $"/root/game/Player"
 
 
 func _ready():
