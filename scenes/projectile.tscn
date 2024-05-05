@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://c2s0g0prrujx2"]
+
+[ext_resource type="Texture2D" uid="uid://6owpy22a60a6" path="res://assets/sprites/fruit.png" id="1_b40ht"]
+[ext_resource type="Script" path="res://scripts/objectsBehavior/projectile.gd" id="1_e8mu3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ogy4"]
+atlas = ExtResource("1_b40ht")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6ljr0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ogy4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h6vut"]
+radius = 4.12311
+
+[node name="projectile" type="Area2D"]
+z_index = 4
+position = Vector2(0, 1)
+collision_layer = 8
+collision_mask = 4
+script = ExtResource("1_e8mu3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6ljr0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_h6vut")
