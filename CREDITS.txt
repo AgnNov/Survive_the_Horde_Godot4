@@ -1,12 +1,7 @@
-All assets in the pack have been repackaged and many have been modified by Brackeys.
-
-
-LICENSE for all assets:
-
-Creative Commons Zero (CC0)
-
-
 CREDIT:
+
+All assets in the pack have been repackaged and many have been modified by Brackeys.
+https://brackeysgames.itch.io/brackeys-platformer-bundle
 
 SPRITES by analogStudios_:
 knight (https://analogstudios.itch.io/camelot)
@@ -16,11 +11,8 @@ platforms and coin (https://analogstudios.itch.io/four-seasons-platformer-sprite
 SPRITES by RottingPixels:
 world_tileset and fruit (https://rottingpixels.itch.io/four-seasons-platformer-tileset-16x16free)
 
-
-WORLD TILESET originally 
-
-SOUNDS by Brackeys, Asbjørn Thirslund
-
-MUSIC by Brackeys, Sofia Thirslund
+SOUNDS AND MUSIC by Leohpaz:
+52_Dive_02, 56_Attack_03, 69_Enemy_death_01 (https://leohpaz.itch.io/rpg-essentials-sfx-free)
+Goblins_Dance_(Battle) (https://leohpaz.itch.io/minifantasy-dungeon-sfx-pack)
 
 FONTS by Jayvee Enaguas - HarvettFox96 - (https://www.dafont.com/pixel-operator.font?l[]=10&l[]=1)
